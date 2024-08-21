@@ -18,25 +18,25 @@ public class IngredientTest {
     public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.STRICT_STUBS);
 
     @Test
-    public void testGetTypeSause() {
+    public void checkReturnCorrectIngredientTypeSauce() {
         Ingredient ingredient = new Ingredient(IngredientType.SAUCE, null, 0);
         IngredientType returnGetType = ingredient.getType();
         Assert.assertEquals(IngredientType.SAUCE, returnGetType);
     }
     @Test
-    public void testGetTypeFilling() {
+    public void checkReturnCorrectIngredientTypeFilling() {
         Ingredient ingredient = new Ingredient(IngredientType.FILLING, null, 0);
         IngredientType returnGetType = ingredient.getType();
         Assert.assertEquals(IngredientType.FILLING, returnGetType);
     }
     @Test
-    public void testGetName() {
+    public void checkReturnCorrectTestName() {
         Ingredient ingredient = new Ingredient(null, "hot sauce", 0);
         String returnGetName = ingredient.getName();
         Assert.assertEquals("hot sauce", returnGetName);
     }
     @Test
-    public void TestGetPrice() {
+    public void checkReturnCorrectTestPrice() {
         Ingredient ingredient = new Ingredient(null, null, 100);
         int returnGetPrice = (int)ingredient.getPrice();
         Assert.assertEquals(100, returnGetPrice);

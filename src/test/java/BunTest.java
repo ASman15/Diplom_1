@@ -34,13 +34,13 @@ public class BunTest {
         this.testPrice=testPrice;
     }
     @Test
-    public void testGetName() {
+    public void checkReturnCorrectTestName() {
         Bun bun = new Bun(testName, testPrice);
         String returnGetName = bun.getName();
         Assert.assertEquals(testName, returnGetName);
     }
     @Test
-    public void testGetPrice() {
+    public void checkReturnCorrectTestPrice() {
         Bun bun = new Bun(testName, testPrice);
         int returnGetPrice = (int) bun.getPrice();
         Assert.assertEquals(testPrice, returnGetPrice);

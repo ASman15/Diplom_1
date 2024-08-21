@@ -23,7 +23,7 @@ public class BurgerTest {
     public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.STRICT_STUBS);
 
     @Test
-    public void setBunTest() {
+    public void checkReturnCorrectBun() {
         Burger burger = new Burger();
         burger.setBuns(bun);
         Assert.assertEquals(bun, burger.bun);
@@ -35,24 +35,28 @@ public class BurgerTest {
         Assert.assertEquals(ingredient1, burger.ingredients.get(0));
     }
     @Test
-    public void ingredientRemovedIsSuccess() {
+    public void removeIngredientIsSuccess() {
+        int numberOfRemoveIngredient = 0;
+        int expectedQuantityOfIngredients = 1;
         Burger burger = new Burger();
         burger.addIngredient(ingredient1);
         burger.addIngredient(ingredient2);
-        burger.removeIngredient(0);
-        Assert.assertEquals(1, burger.ingredients.size());
+        burger.removeIngredient(numberOfRemoveIngredient);
+        Assert.assertEquals(expectedQuantityOfIngredients, burger.ingredients.size());
     }
     @Test
-    public void ingredientsMovedIsSuccess() {
+    public void moveIngredientsIsSuccess() {
+        int originalPositionOfIngredient = 0;
+        int newPositionOfIngredient = 1;
         Burger burger = new Burger();
         burger.addIngredient(ingredient1);
         burger.addIngredient(ingredient2);
-        burger.moveIngredient(0, 1);
-        Assert.assertEquals(ingredient1, burger.ingredients.get(1));
-        Assert.assertEquals(ingredient2, burger.ingredients.get(0));
+        burger.moveIngredient(originalPositionOfIngredient, newPositionOfIngredient);
+        Assert.assertEquals(ingredient1, burger.ingredients.get(newPositionOfIngredient));
+        Assert.assertEquals(ingredient2, burger.ingredients.get(originalPositionOfIngredient));
     }
     @Test
-    public void BurgerPriceIsCorrect() {
+    public void retuenCorrectBurgerPrice() {
         Burger burger = new Burger();
         burger.setBuns(bun);
         burger.addIngredient(ingredient1);
@@ -64,7 +68,7 @@ public class BurgerTest {
         Assert.assertEquals(price, burger.getPrice(), 0F);
     }
     @Test
-    public void BurgerReceiptIsCorrect() {
+    public void returnCorrectBurgerReceipt() {
         Burger burger = new Burger();
         burger.setBuns(bun);
         burger.addIngredient(ingredient1);
