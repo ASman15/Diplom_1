@@ -1,0 +1,12 @@
+.idea
+target/classes
+target/generated-sources
+target/maven-status
+target/maven-archiver
+target/generated-test-sources
+target/test-classes
+target/jacoco.exec
+target/praktikum-1.0-SNAPSHOT.jar
+.DC_Store
+.vccode/
+build/
